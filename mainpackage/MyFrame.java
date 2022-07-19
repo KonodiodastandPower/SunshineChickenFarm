@@ -110,11 +110,7 @@ public class MyFrame extends JFrame{
 
             my.append("第"+re.day+"天开始");
 
-            int neweggs = 0;
-
-            for(int x = 0;x < re.CxkNumber;x++){
-                neweggs = neweggs + random.nextInt(6) + 1;
-            }
+            int neweggs = re.CxkNumber + (int)(Math.random() * 4 * re.CxkNumber);
 
             re.egg = re.egg + neweggs;
 
@@ -149,10 +145,8 @@ public class MyFrame extends JFrame{
                 }
 
                 re.egg = re.egg - num;
-                int newmoney = 0;
-                for(int x = 0;x < num;x++){
-                    newmoney = newmoney + random.nextInt(11) + 5;
-                }
+                int newmoney = 5*num + (int)(Math.random()*10*num);
+
                 re.money = re.money + newmoney;
 
                 my.append("你卖掉了"+num+"个蛋，还剩"+re.egg+"个");
